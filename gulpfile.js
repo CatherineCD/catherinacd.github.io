@@ -31,9 +31,22 @@ const cached = require('gulp-cached');
 const dependents = require('gulp-dependents');
 const browsersync = require('browser-sync').create();
 
-// Variables
-const pages = './src/**/**/*.pug';
-const components = './src/views/components/**/*.pug';
+const dir = {
+  srcSimpleFoodBlog: 'sites/simple-food-blog/',
+};
+
+const config = {
+  simpleFoodBlog: {
+    styles: {
+      src: dir.srcSimpleFoodBlog + 'scss/**/*.scss',
+      dist: 'public/simple-food-blog/css/'
+    },
+    html: {
+      src: dir.srcSimpleFoodBlog + 'views/pages/*.pug',
+      dist: 'public/simple-food-blog/'
+    }
+  }
+}
 
 // Clean assets
 function clear() {
@@ -42,44 +55,40 @@ function clear() {
   }).pipe(clean());
 }
 
-// JS function
-function js() {
-  const source = './src/js/**/*.js';
-  const pages = './src/js/pages/*.js';
+// // JS function
+// function js() {
+//   const source = './src/js/**/*.js';
+//   const pages = './src/js/pages/*.js';
 
-  return src([pages], source)
-    .pipe(
-      babel({
-        presets: ['@babel/env'],
-      })
-    )
-    .pipe(
-      eslint({
-        rules: {
-          camelcase: 1,
-          'comma-dangle': 2,
-          quotes: 0,
-        },
-      })
-    )
-    .pipe(include())
-    .pipe(uglify())
-    .pipe(
-      rename({
-        extname: '-bundle.min.js',
-      })
-    )
-    .pipe(dest('./build/js/'))
-    .pipe(browsersync.stream());
-}
+//   return src([pages], source)
+//     .pipe(
+//       babel({
+//         presets: ['@babel/env'],
+//       })
+//     )
+//     .pipe(
+//       eslint({
+//         rules: {
+//           camelcase: 1,
+//           'comma-dangle': 2,
+//           quotes: 0,
+//         },
+//       })
+//     )
+//     .pipe(include())
+//     .pipe(uglify())
+//     .pipe(
+//       rename({
+//         extname: '-bundle.min.js',
+//       })
+//     )
+//     .pipe(dest('./public/js/'))
+//     .pipe(browsersync.stream());
+// }
 
 // HTML function
 function html() {
-  const components = './src/views/components/**/*.pug';
-  const pages = './src/views/pages/*.pug';
-  const index = './src/index.pug';
-
-  return src([index, pages], components)
+  return src(config.simpleFoodBlog.html.src)
     .pipe(plumber())
     .pipe(pugLinter({
       reporter: 'default'
@@ -87,16 +96,13 @@ function html() {
     .pipe(pug({
       pretty: true
     }))
-    .pipe(dest('./build'))
+    .pipe(dest(config.simpleFoodBlog.html.dist))
     .pipe(browsersync.stream());
 }
 
 // CSS function
 function css() {
-  const main = './src/scss/main.scss';
-  const pages = './src/scss/pages/*.scss';
-
-  return src([main, pages])
+  return src(config.simpleFoodBlog.styles.src)
     .pipe(cached('sasscache'))
     .pipe(dependents())
     .pipe(sass({
@@ -113,25 +119,25 @@ function css() {
         extname: '.min.css',
       })
     )
-    .pipe(dest('./build/css/pages', {
+    .pipe(dest(config.simpleFoodBlog.styles.dist, {
       sourcemaps: true
     }))
     .pipe(browsersync.stream());
 }
 
-// Optimize images
-function img() {
-  return src('./src/img/**/*')
-    .pipe(changed('./build/img'))
-    // .pipe(imagemin())
-    .pipe(dest('./build/img'));
-}
+// // Optimize images
+// function img() {
+//   return src('./src/img/**/*')
+//     .pipe(changed('./public/img'))
+//     // .pipe(imagemin())
+//     .pipe(dest('./public/img'));
+// }
 
-// Optimize images
-function fonts() {
-  return src('./src/fonts/**/*')
-    .pipe(dest('./build/fonts'));
-}
+// // Optimize images
+// function fonts() {
+//   return src('./src/fonts/**/*')
+//     .pipe(dest('./public/fonts'));
+// }
 
 // Watch files
 function watchFiles() {
@@ -147,11 +153,11 @@ function watchFiles() {
 function browserSync() {
   browsersync.init({
     server: {
-      baseDir: ['./build', './build/views/pages'],
+      baseDir: ['./public'],
       notify: false
     },
   });
 }
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, html, parallel(js, css, img, fonts));
+exports.default = series(clear, html, parallel(css));
