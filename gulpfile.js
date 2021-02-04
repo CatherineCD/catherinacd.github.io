@@ -31,64 +31,64 @@ const cached = require('gulp-cached');
 const dependents = require('gulp-dependents');
 const browsersync = require('browser-sync').create();
 
-const dir = {
-  srcSimpleFoodBlog: 'sites/simple-food-blog/',
+const projects = {
+  srcSimpleFoodBlog: 'simple-food-blog/',
 };
 
 const config = {
-  simpleFoodBlog: {
     styles: {
-      src: dir.srcSimpleFoodBlog + 'scss/**/*.scss',
-      dist: 'public/simple-food-blog/css/'
+      src: 'scss/**/*.scss',
+      dist: 'css/',
     },
     html: {
-      src: dir.srcSimpleFoodBlog + 'views/pages/*.pug',
-      dist: 'public/simple-food-blog/'
+      src: 'views/pages/*.pug',
+      dist: '/',
+    },
+    scripts: {
+      src: 'js/**/*.js',
+      dist: 'js/',
+    },
+    images: {
+      src: 'img/**/*',
+      dist: 'img/'
+    },
+    fonts: {
+      src: 'fonts/**/*',
+      dist: 'fonts/'
     }
-  }
 }
 
-// Clean assets
-function clear() {
-  return src('./assets/*', {
-    read: false,
-  }).pipe(clean());
+// JS function
+function js() {
+  return src('sites/' + projects.srcSimpleFoodBlog + config.scripts.src)
+    .pipe(
+      babel({
+        presets: ['@babel/env'],
+      })
+    )
+    .pipe(
+      eslint({
+        rules: {
+          camelcase: 1,
+          'comma-dangle': 2,
+          quotes: 0,
+        },
+      })
+    )
+    .pipe(include())
+    .pipe(uglify())
+    .pipe(
+      rename({
+        extname: '-bundle.min.js',
+      })
+    )
+    .pipe(dest('sites/' + projects.srcSimpleFoodBlog + config.scripts.dist))
+    .pipe(browsersync.stream());
 }
-
-// // JS function
-// function js() {
-//   const source = './src/js/**/*.js';
-//   const pages = './src/js/pages/*.js';
-
-//   return src([pages], source)
-//     .pipe(
-//       babel({
-//         presets: ['@babel/env'],
-//       })
-//     )
-//     .pipe(
-//       eslint({
-//         rules: {
-//           camelcase: 1,
-//           'comma-dangle': 2,
-//           quotes: 0,
-//         },
-//       })
-//     )
-//     .pipe(include())
-//     .pipe(uglify())
-//     .pipe(
-//       rename({
-//         extname: '-bundle.min.js',
-//       })
-//     )
-//     .pipe(dest('./public/js/'))
-//     .pipe(browsersync.stream());
-// }
 
 // HTML function
 function html() {
-  return src(config.simpleFoodBlog.html.src)
+  return src('sites/' + projects.srcSimpleFoodBlog + config.html.src)
     .pipe(plumber())
     .pipe(pugLinter({
       reporter: 'default'
@@ -96,13 +96,13 @@ function html() {
     .pipe(pug({
       pretty: true
     }))
-    .pipe(dest(config.simpleFoodBlog.html.dist))
+    .pipe(dest('public/' + projects.srcSimpleFoodBlog + config.html.dist))
     .pipe(browsersync.stream());
 }
 
 // CSS function
 function css() {
-  return src(config.simpleFoodBlog.styles.src)
+  return src('sites/' + projects.srcSimpleFoodBlog + config.styles.src)
     .pipe(cached('sasscache'))
     .pipe(dependents())
     .pipe(sass({
@@ -119,45 +119,44 @@ function css() {
         extname: '.min.css',
       })
     )
-    .pipe(dest(config.simpleFoodBlog.styles.dist, {
+    .pipe(dest('public/' + projects.srcSimpleFoodBlog + config.styles.dist, {
       sourcemaps: true
     }))
     .pipe(browsersync.stream());
 }
 
-// // Optimize images
-// function img() {
-//   return src('./src/img/**/*')
-//     .pipe(changed('./public/img'))
-//     // .pipe(imagemin())
-//     .pipe(dest('./public/img'));
-// }
+// Optimize images
+function img() {
+  return src('sites/' + projects.srcSimpleFoodBlog + config.images.src)
+    .pipe(changed('public/' + projects.srcSimpleFoodBlog + config.images.dist))
+    .pipe(imagemin())
+    .pipe(dest('public/' + projects.srcSimpleFoodBlog + config.images.dist));
+}
 
-// // Optimize images
-// function fonts() {
-//   return src('./src/fonts/**/*')
-//     .pipe(dest('./public/fonts'));
-// }
+// Optimize images
+function fonts() {
+  return src('sites/' + projects.srcSimpleFoodBlog + config.fonts.src)
+    .pipe(dest('public/' + projects.srcSimpleFoodBlog + config.fonts.dist));
+}
 
 // Watch files
 function watchFiles() {
-  watch('./src/scss/**/*.scss', css);
-  watch('./src/js/**/*.js', js);
-  watch('./src/js/**/*.js', html);
-  watch('./src/img/*', img);
-  watch('./src/fonts/*', fonts);
-  watch(pages, html);
+  watch('sites/' + projects.srcSimpleFoodBlog + config.styles.src, css);
+  watch('sites/' + projects.srcSimpleFoodBlog + config.scripts.src, js);
+  watch('sites/' + projects.srcSimpleFoodBlog + config.images.src, img);
+  watch('sites/' + projects.srcSimpleFoodBlog + config.fonts.src, fonts);
+  watch('sites/' + projects.srcSimpleFoodBlog + config.html.src, html);
 }
 
 // BrowserSync
 function browserSync() {
   browsersync.init({
     server: {
-      baseDir: ['./public'],
+      baseDir: ['./'],
       notify: false
     },
   });
 }
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, html, parallel(css));
+exports.default = series(html, parallel(css, js, fonts, img));
