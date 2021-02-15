@@ -1,3 +1,17 @@
+// helpers
+@import 'helpers/extends';
+@import 'helpers/functions';
+@import 'helpers/mediaqueries';
+@import 'helpers/mixins';
+@import 'helpers/variables';
+
+// base
+@import 'base/base';
+@import 'base/fonts';
+@import 'base/image';
+@import 'base/reset';
+@import 'base/typo';
+
 // main styles
 body {
   font-size: 1rem;
