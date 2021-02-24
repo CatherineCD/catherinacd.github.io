@@ -1,11 +1,16 @@
 doctype html
-html(lang="fr")
+html(lang="en")
   head
-    title Test
+    title Blog
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, viewport-fit=cover, initial-scale=1.0")
     block extrastuff
+
   body
+    //- header
+    include ../base/header
+
+    //- content
     main.main
       block content
     

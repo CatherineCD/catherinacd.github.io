@@ -1,32 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Document</title>
-    <link rel="stylesheet" href="css/pages/homepage.min.css"/>
+    <title>Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/pages/homepage.min.css">
+    <script src="js/swiper-bundle.min.js"></script>
   </head>
   <body>
-    <p>homepage</p>
-    <section class="cards">
-      <article class="card" id="id">
-        <figure class="card__image image"><img src="img/cat.jpg" alt="cat" srcset=""/></figure>
-        <p class="card__subtitle subtitle">category </p>
-        <p class="card__title title">title</p>
-        <p class="card__description description"><a href="id.html" rel="bookmark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit maiores consectetur dolorem voluptates, quis repellat eaque nesciunt voluptatum incidunt quod ipsa impedit eius porro ullam saepe quos, sit vero nam!</a></p>
+    <header class="header">
+      <div class="header__inner">
+        <h1 class="header__logo"><a href="/" rel="home">Simple Food</a></h1>
+        <nav class="header__navigation" role="navigation" aria-label="Main">
+          <ul class="header__navigation-list">
+            <li class="header__navigation-item"><a href="/tips" id="tips" rel="tips">Tips</a></li>
+            <li class="header__navigation-item"><a href="/lifestyle" id="lifestyle" rel="lifestyle">Lifestyle</a></li>
+            <li class="header__navigation-item"><a href="/recipes" id="recipes" rel="recipes">Recipes</a> </li>
+            <li class="header__navigation-item"><a href="/about" id="about" rel="about">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <article class="banner">
+        <div class="banner__inner">
+          <div class="banner__info">
+            <h2 class="banner__title">A blog for people who like simple food</h2>
+            <p class="banner__description description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
+            <button class="button button-secondary"><span class="text">See popular recipes</span></button>
+          </div>
+        </div>
       </article>
-      <article class="card" id="id">
-        <figure class="card__image image"><img src="img/cat.jpg" alt="cat" srcset=""/></figure>
-        <p class="card__subtitle subtitle">category </p>
-        <p class="card__title title">title</p>
-        <p class="card__description description"><a href="id.html" rel="bookmark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit maiores consectetur dolorem voluptates, quis repellat eaque nesciunt voluptatum incidunt quod ipsa impedit eius porro ullam saepe quos, sit vero nam!</a></p>
+      <article class="cards">
+        <div class="cards__inner">
+          <article class="card" id="id">
+            <figure class="card__image image"><img src="img/cat.jpg" alt="cat" srcset=""></figure>
+            <p class="card__subtitle subtitle">category </p>
+            <p class="card__title title">title</p>
+            <p class="card__description description"><a href="id.html" rel="bookmark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit maiores consectetur dolorem voluptates, quis repellat eaque nesciunt voluptatum incidunt quod ipsa impedit eius porro ullam saepe quos, sit vero nam!</a></p>
+          </article>
+          <article class="card" id="id">
+            <figure class="card__image image"><img src="img/cat.jpg" alt="cat" srcset=""></figure>
+            <p class="card__subtitle subtitle">category </p>
+            <p class="card__title title">title</p>
+            <p class="card__description description"><a href="id.html" rel="bookmark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit maiores consectetur dolorem voluptates, quis repellat eaque nesciunt voluptatum incidunt quod ipsa impedit eius porro ullam saepe quos, sit vero nam!</a></p>
+          </article>
+          <article class="card" id="id">
+            <figure class="card__image image"><img src="img/cat.jpg" alt="cat" srcset=""></figure>
+            <p class="card__subtitle subtitle">category </p>
+            <p class="card__title title">title</p>
+            <p class="card__description description"><a href="id.html" rel="bookmark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit maiores consectetur dolorem voluptates, quis repellat eaque nesciunt voluptatum incidunt quod ipsa impedit eius porro ullam saepe quos, sit vero nam!</a></p>
+          </article>
+        </div>
       </article>
-      <article class="card" id="id">
-        <figure class="card__image image"><img src="img/cat.jpg" alt="cat" srcset=""/></figure>
-        <p class="card__subtitle subtitle">category </p>
-        <p class="card__title title">title</p>
-        <p class="card__description description"><a href="id.html" rel="bookmark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit maiores consectetur dolorem voluptates, quis repellat eaque nesciunt voluptatum incidunt quod ipsa impedit eius porro ullam saepe quos, sit vero nam!</a></p>
+      <article class="recipes">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <article class="card" id="id">
+                <figure class="card__image image"><img src="img/cat.jpg" alt="cat" srcset=""></figure>
+                <p class="card__subtitle subtitle">category </p>
+                <p class="card__title title">title</p>
+                <p class="card__description description"><a href="id.html" rel="bookmark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit maiores consectetur dolorem voluptates, quis repellat eaque nesciunt voluptatum incidunt quod ipsa impedit eius porro ullam saepe quos, sit vero nam!</a></p>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="card" id="id">
+                <figure class="card__image image"><img src="img/cat.jpg" alt="cat" srcset=""></figure>
+                <p class="card__subtitle subtitle">category </p>
+                <p class="card__title title">title</p>
+                <p class="card__description description"><a href="id.html" rel="bookmark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit maiores consectetur dolorem voluptates, quis repellat eaque nesciunt voluptatum incidunt quod ipsa impedit eius porro ullam saepe quos, sit vero nam!</a></p>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="card" id="id">
+                <figure class="card__image image"><img src="img/cat.jpg" alt="cat" srcset=""></figure>
+                <p class="card__subtitle subtitle">category </p>
+                <p class="card__title title">title</p>
+                <p class="card__description description"><a href="id.html" rel="bookmark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit maiores consectetur dolorem voluptates, quis repellat eaque nesciunt voluptatum incidunt quod ipsa impedit eius porro ullam saepe quos, sit vero nam!</a></p>
+              </article>
+            </div>
+          </div>
+        </div>
       </article>
-    </section>
+    </main>
+    <script src="js/homepage-bundle.min.js"></script>
   </body>
 </html>

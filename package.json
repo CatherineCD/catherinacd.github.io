@@ -9,7 +9,7 @@
     "jquery-ui": "^1.12.1",
     "jquery-ui-dist": "^1.12.1",
     "node-sass": "^5.0.0",
-    "swiper": "^6.3.5"
+    "swiper": "^6.4.15"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",

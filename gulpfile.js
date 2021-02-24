@@ -83,8 +83,19 @@ function js() {
         extname: '-bundle.min.js',
       })
     )
-    .pipe(dest('sites/' + projects.srcSimpleFoodBlog + config.scripts.dist))
+    .pipe(dest('public/' + projects.srcSimpleFoodBlog + config.scripts.dist))
     .pipe(browsersync.stream());
+}
+
+// js vendors
+function jsVendors() {
+  const modules = [
+    'node_modules/swiper/swiper-bundle.min.js',
+    'node_modules/swiper/swiper-bundle.min.js.map',
+  ];
+
+  return src(modules)
+    .pipe(dest('public/' + projects.srcSimpleFoodBlog + config.scripts.dist));
 }
 
 // HTML function
@@ -126,6 +137,18 @@ function css() {
     .pipe(browsersync.stream());
 }
 
+// css vendors
+function cssVendors() {
+  const modules = [
+    'node_modules/swiper/swiper-bundle.min.css',
+  ];
+
+  return src(modules)
+    .pipe(dest('public/' + projects.srcSimpleFoodBlog + config.styles.dist, {
+      sourcemaps: true
+    }));
+}
+
 // Optimize images
 function img() {
   return src('sites/' + projects.srcSimpleFoodBlog + config.images.src)
@@ -160,4 +183,4 @@ function browserSync() {
 }
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(html, parallel(css, js, fonts, img));
+exports.default = series(html, parallel(css, cssVendors, js, jsVendors, fonts, img));

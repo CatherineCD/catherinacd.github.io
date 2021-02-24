@@ -1,10 +1,11 @@
 body {
   display: flex;
   flex-direction: column;
-  // font-family: $font-family, sans-serif;
+  font-family: $font-family-primary;
   font-size: inherit;
   font-style: inherit;
   font-weight: 400;
+  line-height: 1.5;
 
   &.no-scroll {
     position: fixed;
@@ -23,10 +24,26 @@ body {
 }
 
 a {
+  @include transition(color);
   color: inherit;
   text-decoration: none;
+
+  &:hover {
+    color: $primary;
+  }
 }
 
 p {
   font-size: $text;
+}
+
+.container {
+  @include respond(tablet) {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+  max-width: 118rem;
+  margin: 0 auto;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
 }

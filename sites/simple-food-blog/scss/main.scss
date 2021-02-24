@@ -11,10 +11,4 @@
 @import 'base/image';
 @import 'base/reset';
 @import 'base/typo';
-
-// main styles
-body {
-  font-size: 1rem;
-  line-height: 1.5;
-  font-family: $font-family-primary;
-}
+@import 'base/header';
