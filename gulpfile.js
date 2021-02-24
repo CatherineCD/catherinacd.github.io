@@ -41,7 +41,8 @@ const config = {
       dist: 'css/',
     },
     html: {
-      src: 'views/pages/*.pug',
+      srcPages: 'views/pages/*.pug',
+      src: 'views/**/*.pug',
       dist: '/',
     },
     scripts: {
@@ -88,7 +89,7 @@ function js() {
 
 // HTML function
 function html() {
-  return src('sites/' + projects.srcSimpleFoodBlog + config.html.src)
+  return src(['sites/' + projects.srcSimpleFoodBlog + config.html.srcPages, !'sites/' + projects.srcSimpleFoodBlog + config.html.src])
     .pipe(plumber())
     .pipe(pugLinter({
       reporter: 'default'

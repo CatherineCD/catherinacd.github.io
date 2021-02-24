@@ -1,1 +1,21 @@
 // typo
+.title {
+  font-size: $title;
+  line-height: 1.25;
+  font-weight: 600;
+  color: $title-color;
+}
+
+.subtitle {
+  font-size: $subtitle;
+  color: $subtitle-color;
+}
+
+.description {
+  font-size: $description;
+  color: $description-color;
+}
+
+.text {
+  font-size: $text;
+}

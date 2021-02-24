@@ -15,7 +15,7 @@ body {
   * {
     &:focus {
       @include respond(tablet) {
-        box-shadow: 0 0 0 1px $primary;
+        box-shadow: 0 0 0 1px $shadow;
       }
       outline: none;
     }

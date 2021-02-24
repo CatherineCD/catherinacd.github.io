@@ -1,4 +1,26 @@
-// vars
-$primary: #333;
+// main colors
+$black: #000;
+$white: #fff;
 
-$text: 1.6rem;
+// colors
+$primary: #ffbf9d;
+$secondary: #fff8f2;
+$light: #eaeaea;
+$gray-light: #9fa1aa;
+$gray-dark: #595c69;
+$dark: #303036;
+$shadow: #333;
+
+// typo colors
+$title-color: $black;
+$subtitle-color: #9fa1aa;
+$description-color: #303036;
+
+// typo
+$text: 1.5rem;
+$title: 1.8rem;
+$subtitle: 1.2rem;
+$description: 1.5rem;
+
+// fonts
+$font-family-primary: 'Montserrat', sans-serif;
