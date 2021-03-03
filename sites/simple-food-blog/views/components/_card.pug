@@ -1,6 +1,8 @@
-article.card(id="id")
-  figure.card__image.image
-    img(src="img/cat.jpg", alt="cat", srcset="")
-  p.card__subtitle.subtitle category 
-  p.card__title.title title
-  p.card__description.description #[a(href="id.html" rel="bookmark") Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit maiores consectetur dolorem voluptates, quis repellat eaque nesciunt voluptatum incidunt quod ipsa impedit eius porro ullam saepe quos, sit vero nam!]
+mixin card(card)
+  a.card(href=card.id + ".html")&attributes(attributes)
+    figure.card__image.image
+      img(src="img/" + card.img, alt=card.alt)
+    p.card__subtitle.subtitle= card.subtitle 
+    p.card__title.title= card.title
+    p.card__description.description 
+      span= card.description

@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <defs>
+    <symbol id="arrowLineRight" viewbox="0 0 20 20" preserveAspectRatio="xMidYMid meet"><g xmlns="http://www.w3.org/2000/svg"><path d="M13.47 3.18a.711.711 0 00-1.01 1l5.11 5.11H.71a.7.7 0 00-.71.7.715.715 0 00.71.72h16.87l-5.11 5.1a.731.731 0 000 1.01.712.712 0 001.01 0l6.32-6.32a.7.7 0 000-1z"/></g></symbol>
+    <symbol id="arrowRight" viewbox="0 0 35.609 40" preserveAspectRatio="xMidYMid meet"><g xmlns="http://www.w3.org/2000/svg"><g><g transform="translate(0 .597)"><g><path d="M0 0h35.609v38.767H0z" fill="none"/></g></g><g><g><path d="M27.086 18.658L11.073 2.651a1.8 1.8 0 00-2.545 2.54l14.743 14.734L8.529 34.666a1.8 1.8 0 002.545 2.542L27.088 21.2a1.814 1.814 0 00-.002-2.542z"/></g></g></g></g></symbol>
+  </defs>
+</svg><!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Blog</title>
@@ -9,81 +15,114 @@
     <script src="js/swiper-bundle.min.js"></script>
   </head>
   <body>
-    <header class="header">
-      <div class="header__inner">
-        <h1 class="header__logo"><a href="/" rel="home">Simple Food</a></h1>
-        <nav class="header__navigation" role="navigation" aria-label="Main">
-          <ul class="header__navigation-list">
-            <li class="header__navigation-item"><a href="/tips" id="tips" rel="tips">Tips</a></li>
-            <li class="header__navigation-item"><a href="/lifestyle" id="lifestyle" rel="lifestyle">Lifestyle</a></li>
-            <li class="header__navigation-item"><a href="/recipes" id="recipes" rel="recipes">Recipes</a> </li>
-            <li class="header__navigation-item"><a href="/about" id="about" rel="about">About</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
     <main class="main">
-      <article class="banner">
-        <div class="banner__inner">
-          <div class="banner__info">
-            <h2 class="banner__title">A blog for people who like simple food</h2>
-            <p class="banner__description description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-            <button class="button button-secondary"><span class="text">See popular recipes</span></button>
-          </div>
+      <header class="header header--sticky">
+        <div class="header__inner">
+          <h1 class="header__logo"><a href="/" rel="home">Simple Food</a></h1>
+          <nav class="header__navigation" role="navigation" aria-label="Main">
+            <ul class="header__navigation-list">
+              <li class="header__navigation-item"><a href="/Tips" id="Tips" rel="Tips">Tips</a></li>
+              <li class="header__navigation-item"><a href="/Lifestyle" id="Lifestyle" rel="Lifestyle">Lifestyle</a></li>
+              <li class="header__navigation-item"><a href="/Recipes" id="Recipes" rel="Recipes">Recipes</a></li>
+              <li class="header__navigation-item"><a href="/About" id="About" rel="About">About</a></li>
+            </ul>
+          </nav>
         </div>
-      </article>
-      <article class="cards">
-        <div class="cards__inner">
-          <article class="card" id="id">
-            <figure class="card__image image"><img src="img/cat.jpg" alt="cat" srcset=""></figure>
-            <p class="card__subtitle subtitle">category </p>
-            <p class="card__title title">title</p>
-            <p class="card__description description"><a href="id.html" rel="bookmark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit maiores consectetur dolorem voluptates, quis repellat eaque nesciunt voluptatum incidunt quod ipsa impedit eius porro ullam saepe quos, sit vero nam!</a></p>
-          </article>
-          <article class="card" id="id">
-            <figure class="card__image image"><img src="img/cat.jpg" alt="cat" srcset=""></figure>
-            <p class="card__subtitle subtitle">category </p>
-            <p class="card__title title">title</p>
-            <p class="card__description description"><a href="id.html" rel="bookmark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit maiores consectetur dolorem voluptates, quis repellat eaque nesciunt voluptatum incidunt quod ipsa impedit eius porro ullam saepe quos, sit vero nam!</a></p>
-          </article>
-          <article class="card" id="id">
-            <figure class="card__image image"><img src="img/cat.jpg" alt="cat" srcset=""></figure>
-            <p class="card__subtitle subtitle">category </p>
-            <p class="card__title title">title</p>
-            <p class="card__description description"><a href="id.html" rel="bookmark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit maiores consectetur dolorem voluptates, quis repellat eaque nesciunt voluptatum incidunt quod ipsa impedit eius porro ullam saepe quos, sit vero nam!</a></p>
-          </article>
-        </div>
-      </article>
-      <article class="recipes">
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <article class="card" id="id">
-                <figure class="card__image image"><img src="img/cat.jpg" alt="cat" srcset=""></figure>
-                <p class="card__subtitle subtitle">category </p>
-                <p class="card__title title">title</p>
-                <p class="card__description description"><a href="id.html" rel="bookmark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit maiores consectetur dolorem voluptates, quis repellat eaque nesciunt voluptatum incidunt quod ipsa impedit eius porro ullam saepe quos, sit vero nam!</a></p>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article class="card" id="id">
-                <figure class="card__image image"><img src="img/cat.jpg" alt="cat" srcset=""></figure>
-                <p class="card__subtitle subtitle">category </p>
-                <p class="card__title title">title</p>
-                <p class="card__description description"><a href="id.html" rel="bookmark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit maiores consectetur dolorem voluptates, quis repellat eaque nesciunt voluptatum incidunt quod ipsa impedit eius porro ullam saepe quos, sit vero nam!</a></p>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article class="card" id="id">
-                <figure class="card__image image"><img src="img/cat.jpg" alt="cat" srcset=""></figure>
-                <p class="card__subtitle subtitle">category </p>
-                <p class="card__title title">title</p>
-                <p class="card__description description"><a href="id.html" rel="bookmark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit maiores consectetur dolorem voluptates, quis repellat eaque nesciunt voluptatum incidunt quod ipsa impedit eius porro ullam saepe quos, sit vero nam!</a></p>
-              </article>
+      </header>
+      <section class="homepage">
+        <article class="banner">
+          <div class="banner__inner">
+            <div class="banner__info">
+              <h2 class="banner__title">A blog for people who like simple food</h2>
+              <p class="banner__description description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
+              <button class="button button-secondary" type="button"><span class="text">See popular recipes</span></button>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+        <article class="blog-articles">
+          <div class="blog-articles__inner">
+            <div class="swiper-container swiper-blog-article">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a class="card" href="1.html">
+                            <figure class="card__image image"><img src="img/article-banner-1.jpg" alt="alt for blog articles"></figure>
+                            <p class="card__subtitle subtitle">tips</p>
+                            <p class="card__title title">How to pick the perfect peach</p>
+                            <p class="card__description description"> <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</span></p></a>
+                </div>
+                <div class="swiper-slide"><a class="card" href="2.html">
+                            <figure class="card__image image"><img src="img/article-banner-2.jpg" alt="alt for blog articles"></figure>
+                            <p class="card__subtitle subtitle">Lifestyle</p>
+                            <p class="card__title title">Minimalist kitchen</p>
+                            <p class="card__description description"> <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</span></p></a>
+                </div>
+                <div class="swiper-slide"><a class="card" href="3.html">
+                            <figure class="card__image image"><img src="img/article-banner-3.jpg" alt="alt for blog articles"></figure>
+                            <p class="card__subtitle subtitle">TIPS</p>
+                            <p class="card__title title">Organise your space</p>
+                            <p class="card__description description"> <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</span></p></a>
+                </div>
+                <div class="swiper-slide"><a class="card" href="4.html">
+                            <figure class="card__image image"><img src="img/cat.jpg" alt="alt for blog articles"></figure>
+                            <p class="card__subtitle subtitle">tips</p>
+                            <p class="card__title title">How to pick the perfect peach</p>
+                            <p class="card__description description"> <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</span></p></a>
+                </div>
+                <div class="swiper-slide"><a class="card" href="5.html">
+                            <figure class="card__image image"><img src="img/cat.jpg" alt="alt for blog articles"></figure>
+                            <p class="card__subtitle subtitle">tips</p>
+                            <p class="card__title title">How to pick the perfect peach</p>
+                            <p class="card__description description"> <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</span></p></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="popular-recipes">
+          <div class="popular-recipes__inner">
+            <header class="popular-recipes__header">
+              <h2 class="popular-recipes__title">Popular recipes</h2><a class="popular-recipes__see-all" href="/"><span>See all</span>
+                <svg class="icon icon--arrow-right" fill="currentColor">
+                  <use xlink:href="#arrowRight"></use>
+                </svg></a>
+            </header>
+            <div class="popular-recipes__recipes"><a class="card popular-recipes__recipe" href="1.html">
+                        <figure class="card__image image"><img src="img/recipe-1.jpg" alt="alt for recipe"></figure>
+                        <p class="card__subtitle subtitle">Recipes — Soup</p>
+                        <p class="card__title title">Butternut Squash Soup</p>
+                        <p class="card__description description"> <span>45 min — 6 - 8 portions</span></p></a><a class="card popular-recipes__recipe" href="2.html">
+                        <figure class="card__image image"><img src="img/recipe-2.jpg" alt="alt for recipe"></figure>
+                        <p class="card__subtitle subtitle">Recipes — DRINKS — Breakfast</p>
+                        <p class="card__title title">Berries Smoothie</p>
+                        <p class="card__description description"> <span>15 min — 2 - 4 portions</span></p></a><a class="card popular-recipes__recipe" href="3.html">
+                        <figure class="card__image image"><img src="img/recipe-3.jpg" alt="alt for recipe"></figure>
+                        <p class="card__subtitle subtitle">Recipes — DRINKS — Breakfast</p>
+                        <p class="card__title title">Vegetarian Dumplings</p>
+                        <p class="card__description description"> <span>40 min — 4 - 6 portions</span></p></a><a class="card popular-recipes__recipe" href="4.html">
+                        <figure class="card__image image"><img src="img/recipe-4.jpg" alt="alt for recipe"></figure>
+                        <p class="card__subtitle subtitle">Recipes — Breakfast</p>
+                        <p class="card__title title">Tropical Smoothie Bowl</p>
+                        <p class="card__description description"> <span>25 min — 1 - 2 portions</span></p></a><a class="card popular-recipes__recipe" href="5.html">
+                        <figure class="card__image image"><img src="img/recipe-5.jpg" alt="alt for recipe"></figure>
+                        <p class="card__subtitle subtitle">Recipes — Asian</p>
+                        <p class="card__title title">Spicy Noodles</p>
+                        <p class="card__description description"> <span>30 min — 2 - 4 portions</span></p></a><a class="card popular-recipes__recipe" href="6.html">
+                        <figure class="card__image image"><img src="img/recipe-6.jpg" alt="alt for recipe"></figure>
+                        <p class="card__subtitle subtitle">Recipes — Breakfast — snack</p>
+                        <p class="card__title title">Avocado Toast</p>
+                        <p class="card__description description"> <span>10 min — 1 - 2 portions</span></p></a>
+            </div>
+          </div>
+        </article>
+        <article class="subscribe-block">
+          <div class="subscribe-block__inner">
+            <div class="subscribe-block__info">
+              <h3 class="subscribe-block__title">Subscribe to the best food newsletter</h3>
+              <p class="subscribe-block__description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
+            </div>
+            <button class="button button-primary" type="button"><span class="text">Add my email to the list</span></button>
+          </div>
+        </article>
+      </section>
     </main>
     <script src="js/homepage-bundle.min.js"></script>
   </body>

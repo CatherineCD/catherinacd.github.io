@@ -1,0 +1,9 @@
+include ../components/_card
+
+article.blog-articles
+  .blog-articles__inner
+    .swiper-container.swiper-blog-article
+      .swiper-wrapper
+        each card in articles
+          .swiper-slide
+            +card(card)

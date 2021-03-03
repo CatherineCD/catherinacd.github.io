@@ -1,0 +1,41 @@
+// local variables
+$card-space: 1.5rem;
+
+.popular-recipes {
+  &__inner {
+    @extend .container;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6.5rem;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: $dark;
+  }
+
+  &__see-all {
+    font-size: $text;
+    color: $gray-dark;
+  }
+
+  &__recipes {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -$card-space;
+    margin-left: -$card-space;
+  }
+
+  &__recipe {
+    margin-right: $card-space;
+    margin-bottom: 10rem;
+    margin-left: $card-space;
+  }
+}

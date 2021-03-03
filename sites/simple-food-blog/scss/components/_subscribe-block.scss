@@ -1,0 +1,29 @@
+.subscribe-block {
+  background-color: $secondary;
+
+  &__inner {
+    @extend .container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    max-width: 56rem;
+  }
+
+  &__title {
+    margin-bottom: 3rem;
+    font-size: 2.6rem;
+    font-weight: 500;
+    color: $dark;
+  }
+
+  &__description {
+    font-weight: 300;
+  }
+}

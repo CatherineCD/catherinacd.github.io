@@ -10,8 +10,14 @@
 
 // card component
 .card {
-  flex: 0 1 100%;
-  max-width: 35.2rem;
+  $this: &;
+  width: 35.2rem;
+
+  &:hover {
+    #{$this}__title {
+      color: $primary;
+    }
+  }
 
   &__image {
     margin-bottom: 3.2rem;
@@ -19,10 +25,12 @@
 
   &__title {
     margin-bottom: 1.6rem;
+    transition: color 0.25s;
   }
 
   &__subtitle {
     margin-bottom: 1.2rem;
+    text-transform: uppercase;
   }
 
   &__description {

@@ -74,12 +74,12 @@
       "bottom": ["em", "rem", "%", "vh", "vw"],
       "left": ["em", "rem", "%", "vh", "vw"],
       "width": ["em", "rem", "%", "vw"],
-      "max-width": ["em", "rem", "%", "vw", "ch"],
-      "min-width": ["em", "rem", "%", "vw", "ch"],
+      "max-width": ["em", "rem", "%", "vw"],
+      "min-width": ["em", "rem", "%", "vw"],
       "height": ["em", "rem", "%", "vh"],
       "max-height": ["em", "rem", "%", "vh"],
       "min-height": ["em", "rem", "%", "vh"],
-      "line-height": []
+      "line-height": ["em", " "]
     },
     "function-url-quotes": "always",
     "function-comma-space-after": "always-single-line",
@@ -142,14 +142,7 @@
     "declaration-colon-space-after": "always-single-line",
     "declaration-colon-space-before": "never",
     "declaration-empty-line-before": "never",
-    "declaration-block-no-duplicate-properties": [
-      true,
-      {
-        "ignore": [
-          "consecutive-duplicates-with-different-values"
-        ]
-      }
-    ],
+    "declaration-block-no-duplicate-properties": null,
     "plugin/declaration-block-no-ignored-properties": true,
     "custom-property-empty-line-before": [
       "always",
@@ -163,26 +156,6 @@
           "inside-single-line-block"
         ]
       }
-    ],
-    "order/order": [
-      "dollar-variables",
-      "custom-properties",
-      "at-variables",
-      {
-        "type": "at-rule",
-        "name": "extend"
-      },
-      {
-        "type": "at-rule",
-        "name": "include"
-      },
-      "declarations",
-      {
-        "type": "at-rule",
-        "name": "media"
-      },
-      "rules",
-      "at-rules"
     ],
     "order/properties-order": [
       [
@@ -288,6 +261,75 @@
       {
         "unspecified": "bottom"
       }
+    ],
+    "order/order": [
+      "dollar-variables",
+      {
+        "type": "at-rule",
+        "name": "extend"
+      },
+      {
+        "type": "at-rule",
+        "name": "include",
+        "hasBlock": false
+      },
+      "custom-properties",
+      "at-variables",
+      "declarations",
+      {
+        "type": "rule",
+        "selector": "^&::(before|after)"
+      },
+      {
+        "type": "rule",
+        "selector": "^&:\\w"
+      },
+      {
+        "type": "rule",
+        "selector": "^&_"
+      },
+      {
+        "type": "rule",
+        "selector": "^."
+      },
+      {
+        "type": "at-rule",
+        "name": "include",
+        "parameter": "(?<=respond\\(mobile)"
+      },
+      {
+        "type": "at-rule",
+        "name": "include",
+        "parameter": "(?<=respond\\(tablet-min)"
+      },
+      {
+        "type": "at-rule",
+        "name": "include",
+        "parameter": "(?<=respond\\(tablet)"
+      },
+      {
+        "type": "at-rule",
+        "name": "include",
+        "parameter": "(?<=respond\\(pre-laptop)"
+      },
+      {
+        "type": "at-rule",
+        "name": "include",
+        "parameter": "(?<=respond\\(laptop)"
+      },
+      {
+        "type": "at-rule",
+        "name": "include",
+        "parameter": "(?<=respond\\(full)"
+      },
+
+      {
+        "type": "at-rule",
+        "name": "include",
+        "parameter": "(?<=respond)"
+      },
+      "rules",
+      "at-rules"
     ]
   }
 }

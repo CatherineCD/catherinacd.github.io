@@ -1,0 +1,12 @@
+include ../components/_card
+
+article.popular-recipes
+  .popular-recipes__inner
+    header.popular-recipes__header
+      h2.popular-recipes__title= popular_recipes_title
+      a(href="/").popular-recipes__see-all
+        span= popular_recipes_see_all
+        +svg("", "arrowRight")(class="icon icon--arrow-right")
+    .popular-recipes__recipes
+      each recipe in popular_recipes
+        +card(recipe)(class="popular-recipes__recipe")

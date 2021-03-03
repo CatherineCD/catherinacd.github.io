@@ -1,3 +1,8 @@
+
+include ../components/_svg-sprite
+include ../base/variables
+include ../base/header
+
 doctype html
 html(lang="en")
   head
@@ -7,11 +12,11 @@ html(lang="en")
     block extrastuff
 
   body
-    //- header
-    include ../base/header
-
-    //- content
     main.main
+      //- header
+      +header(menu, "Simple Food", true)
+
+      //- content
       block content
     
     block script

@@ -7,28 +7,19 @@ block extrastuff
   script(src="js/swiper-bundle.min.js")
 
 block content
-  article.banner
-    .banner__inner
-      .banner__info
-        h2.banner__title A blog for people who like simple food
-        p.banner__description.description Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-        button.button.button-secondary #[span.text See popular recipes]
+  section.homepage
+    //- banner
+    include ../components/_banner
 
-  article.cards
-    .cards__inner
-      include ../components/_card
-      include ../components/_card
-      include ../components/_card
+    //- Blog articles
+    include ../components/_blog-articles
 
-  article.recipes
-    .swiper-container
-      .swiper-wrapper
-        .swiper-slide
-          include ../components/_card
-        .swiper-slide
-          include ../components/_card
-        .swiper-slide
-          include ../components/_card
+    //- Popular recipes
+    include ../components/_popular-recipes
+
+    //- Subscribe to the best food newsletter
+    include ../components/_subscribe-block
+  
           
 block script
   script(src="js/homepage-bundle.min.js")

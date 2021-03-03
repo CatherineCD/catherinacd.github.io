@@ -1,10 +1,10 @@
 (function () {
-  // recommend 
-  const recommend = new Swiper('.swiper-container', {
+  const blogArticle = new Swiper('.swiper-blog-article', {
     slidesPerView: 'auto',
-    spaceBetween: 20,
-
+    spaceBetween: 30,
+    grabCursor: true,
     pagination: {
+      el: '.swiper-pagination',
       clickable: true,
     },
   });

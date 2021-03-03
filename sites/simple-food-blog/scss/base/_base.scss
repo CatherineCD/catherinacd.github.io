@@ -1,4 +1,5 @@
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   font-family: $font-family-primary;
@@ -15,10 +16,11 @@ body {
 
   * {
     &:focus {
+      outline: none;
+
       @include respond(tablet) {
         box-shadow: 0 0 0 1px $shadow;
       }
-      outline: none;
     }
   }
 }
@@ -38,12 +40,13 @@ p {
 }
 
 .container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+
   @include respond(tablet) {
     padding-right: 4rem;
     padding-left: 4rem;
   }
-  max-width: 118rem;
-  margin: 0 auto;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
 }
