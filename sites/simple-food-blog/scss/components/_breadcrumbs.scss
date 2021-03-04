@@ -1,0 +1,19 @@
+.breadcrumbs {
+  @include list-unstyled();
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    position: relative;
+    margin-right: 1rem;
+    padding-right: 1rem;
+
+    &:not(:last-of-type) {
+      &:after {
+        content: '/';
+        position: absolute;
+        padding-left: 1rem;
+      }
+    }
+  }
+}

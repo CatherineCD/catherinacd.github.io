@@ -2,6 +2,8 @@ mixin header(menu, title, isSticky)
   header.header(class=isSticky && 'header--sticky')&attributes(attributes)
     .header__inner
       h1.header__logo #[a(href="/" rel="home")= title]
+      button.header__toggle.button.button-primary(role="button") 
+        +svg("", "menu")(class="icon")
       nav.header__navigation(role="navigation" aria-label="Main")
         ul.header__navigation-list
           each menuItem in menu

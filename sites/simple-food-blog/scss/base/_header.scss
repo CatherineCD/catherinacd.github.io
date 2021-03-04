@@ -5,9 +5,15 @@
   &__inner {
     @extend .container;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 0;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    @include respond(tablet) {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__logo {
@@ -15,22 +21,42 @@
     line-height: 1.25;
   }
 
-  &__navigation-list {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+  &__navigation {
+    &-list {
+      @include list-unstyled();
+      display: none;
 
-  &__navigation-item {
-    color: $gray-dark-v2;
-
-    &:not(:last-of-type) {
-      margin-right: 3rem;
+      @include respond(tablet) {
+        display: flex;
+      }
     }
 
-    a {
-      font-size: $text;
+    &-item {
+      color: $gray-dark-v2;
+
+      &:not(:last-of-type) {
+        margin-right: 3rem;
+      }
+
+      a {
+        font-size: $text;
+      }
+    }
+  }
+
+  &__toggle {
+    position: absolute;
+    display: initial;
+    align-self: flex-end;
+    cursor: pointer;
+
+    &--show {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include respond(tablet) {
+      display: none;
     }
   }
 

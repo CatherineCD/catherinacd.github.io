@@ -2,6 +2,7 @@
 include ../components/_svg-sprite
 include ../base/variables
 include ../base/header
+include ../base/footer
 
 doctype html
 html(lang="en")
@@ -14,9 +15,12 @@ html(lang="en")
   body
     main.main
       //- header
-      +header(menu, "Simple Food", true)
+      +header(menu, header_logo, true)
 
       //- content
       block content
+
+      //- footer
+      +footer(menu, footer_copyright)
     
     block script

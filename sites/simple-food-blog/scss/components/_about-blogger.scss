@@ -1,0 +1,40 @@
+.about-blogger {
+  &__inner {
+    @extend .container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+  }
+
+  &__photo-blogger {
+    width: 100%;
+    max-width: 35rem;
+    height: 50rem;
+  }
+
+  &__about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 67.2rem;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-size: 2.6rem;
+    font-weight: 500;
+    color: $dark;
+  }
+
+  &__caption {
+    margin-bottom: 3rem;
+    color: $gray-light;
+  }
+
+  &__description {
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+}

@@ -1,0 +1,7 @@
+include ../components/_breadcrumbs
+
+mixin footer(menu, title)
+  footer.footer&attributes(attributes)
+    .footer__inner
+      p.footer__copyright= title
+      +breadcrumbs(menu)

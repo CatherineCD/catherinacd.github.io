@@ -1,0 +1,14 @@
+.footer {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: $gray-light;
+
+  &__inner {
+    @extend .container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}

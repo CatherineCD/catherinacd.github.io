@@ -4,6 +4,9 @@
 @mixin button-variant($color, $background, $border: $background) {
   $active-background: darken($background, 10%);
   $active-border: darken($border, 12%);
+  color: $color;
+  background-color: $background;
+  border-color: $border;
 
   @include respond(tablet) {
     &:not([disabled]) {
@@ -14,13 +17,16 @@
       }
     }
   }
-  color: $color;
-  background-color: $background;
-  border-color: $border;
 }
 
 // Button outline variants
 @mixin button-outline-variant($color, $color-hover: $white, $background-color: $color) {
+  color: $color;
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid;
+  border-color: $color;
+
   @include respond(tablet) {
     &:not([disabled]) {
       &:hover {
@@ -30,11 +36,6 @@
       }
     }
   }
-  color: $color;
-  background-image: none;
-  background-color: transparent;
-  border: 1px solid;
-  border-color: $color;
 }
 
 //Button box-shadow variants

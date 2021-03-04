@@ -1,0 +1,4 @@
+mixin breadcrumbs(menu, title)
+  ul.breadcrumbs
+    each menuItem in menu
+      li.breadcrumbs__item #[a(href="/" + menuItem.name id=menuItem.name rel=menuItem.name)= menuItem.name]
