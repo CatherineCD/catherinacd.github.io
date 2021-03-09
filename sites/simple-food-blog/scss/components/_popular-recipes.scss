@@ -4,8 +4,13 @@ $card-space: 1.5rem;
 .popular-recipes {
   &__inner {
     @extend .container;
-    padding-top: 15rem;
-    padding-bottom: 15rem;
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+
+    @include respond(tablet) {
+      padding-top: 15rem;
+      padding-bottom: 15rem;
+    }
   }
 
   &__header {
@@ -35,7 +40,11 @@ $card-space: 1.5rem;
 
   &__recipe {
     margin-right: $card-space;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
     margin-left: $card-space;
+
+    @include respond(tablet) {
+      margin-bottom: 10rem;
+    }
   }
 }

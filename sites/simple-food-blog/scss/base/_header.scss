@@ -19,19 +19,29 @@
   &__logo {
     font-size: 3.2rem;
     line-height: 1.25;
+    font-family: $font-family-secondary;
   }
 
   &__navigation {
+    padding-top: 1rem;
+
     &-list {
       @include list-unstyled();
-      display: none;
+      display: flex;
+      flex-direction: column;
+      height: 0;
+      visibility: hidden;
 
       @include respond(tablet) {
         display: flex;
+        flex-direction: row;
+        height: auto;
+        visibility: visible;
       }
     }
 
     &-item {
+      padding: 0.5rem 0;
       color: $gray-dark-v2;
 
       &:not(:last-of-type) {
@@ -42,21 +52,30 @@
         font-size: $text;
       }
     }
+
+    @include respond(tablet) {
+      padding-top: 0;
+    }
   }
 
   &__toggle {
     position: absolute;
+    top: 3rem;
+    right: 2rem;
     display: initial;
     align-self: flex-end;
     cursor: pointer;
+    animation: slide 1s ease 3.5s forwards;
 
     &--show {
       display: flex;
-      flex-direction: column;
+      height: auto;
+      visibility: visible;
     }
 
     @include respond(tablet) {
-      display: none;
+      height: 0;
+      visibility: hidden;
     }
   }
 
@@ -66,5 +85,15 @@
     top: 0;
     left: 0;
     z-index: 2;
+  }
+}
+
+@keyframes slide {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: auto;
   }
 }

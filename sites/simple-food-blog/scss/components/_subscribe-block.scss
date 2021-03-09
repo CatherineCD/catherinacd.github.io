@@ -4,10 +4,18 @@
   &__inner {
     @extend .container;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    padding-top: 9rem;
-    padding-bottom: 9rem;
+    align-items: flex-start;
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+
+    @include respond(tablet) {
+      flex-direction: row;
+      align-items: center;
+      padding-top: 9rem;
+      padding-bottom: 9rem;
+    }
   }
 
   &__info {
@@ -24,6 +32,11 @@
   }
 
   &__description {
+    margin-bottom: 3rem;
     font-weight: 300;
+
+    @include respond(tablet) {
+      margin-bottom: 0;
+    }
   }
 }

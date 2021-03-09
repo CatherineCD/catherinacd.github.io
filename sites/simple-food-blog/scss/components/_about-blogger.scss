@@ -2,16 +2,29 @@
   &__inner {
     @extend .container;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
-    padding-top: 15rem;
-    padding-bottom: 15rem;
+    align-items: flex-start;
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+
+    @include respond(tablet) {
+      flex-direction: row;
+      align-items: center;
+      padding-top: 15rem;
+      padding-bottom: 15rem;
+    }
   }
 
   &__photo-blogger {
     width: 100%;
     max-width: 35rem;
     height: 50rem;
+    margin-bottom: 3rem;
+
+    @include respond(tablet) {
+      margin-bottom: 0;
+    }
   }
 
   &__about-me {

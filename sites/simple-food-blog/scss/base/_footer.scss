@@ -6,9 +6,24 @@
   &__inner {
     @extend .container;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    @include respond(tablet) {
+      flex-direction: row;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+
+  &__copyright {
+    margin-bottom: 1rem;
+
+    @include respond(tablet) {
+      margin-bottom: 0;
+    }
   }
 }

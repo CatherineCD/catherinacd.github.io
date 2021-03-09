@@ -5,10 +5,11 @@
 
   &__item {
     position: relative;
-    margin-right: 1rem;
-    padding-right: 1rem;
 
     &:not(:last-of-type) {
+      margin-right: 1rem;
+      padding-right: 1rem;
+
       &:after {
         content: '/';
         position: absolute;
